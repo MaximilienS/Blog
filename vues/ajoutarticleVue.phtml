@@ -1,0 +1,47 @@
+<?php include "globals/header.phtml"; 
+?>
+   
+<h1>Page protégée</h1>
+
+ <form method="POST" enctype="multipart/form-data">
+
+ 	<label>Titre</label><br> <input type="text" name="Titre" Placeholder="Titre">
+    
+    <br>                    
+
+     <label>Description</label><br> <input type="text" name="description" placeholder="description">
+                 
+
+	<br>
+
+	<label>Auteur</label><br> <input type="text" name="auteur" Placeholder="auteur">
+
+	<br>
+
+	<label>Catégorie</label>
+	<br><Select name="categorie">
+		<?php foreach ($resultatUnecategorie as $key => $value):?>
+			<option value="<?php echo $value->getId();?>"><?php echo $value->getTitre();?></option>
+		<?php endforeach ;?> 
+		
+	</Select>
+
+	<input type="file" name="image" src="rechercher.jpg" alt="Rechercher" name="image" />
+
+	<br>
+	 
+
+
+	
+
+    <button type="submit">Valider</button>
+
+                       
+                           
+                     
+  </form>
+
+
+
+<?php include "globals/slidebar.phtml"; ?>
+<?php include "globals/footer.phtml"; ?>

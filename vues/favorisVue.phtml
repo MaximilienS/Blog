@@ -1,0 +1,39 @@
+<?php include "globals/header.phtml";?>
+
+<h1>Mes Favoris</h1>
+
+<a href="index.php?page=favoris&supprimer=true">Supprimer tous mes favoris</a>
+
+<div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+<?php foreach ($resultatfavoris as $key => $value):?>
+
+                <h2>
+                    <a href="#"><?php echo $value->getTitre();?></a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $value->getDateArticle();?></p>
+                <hr>
+                <img class="img-responsive" src="vues/img/<?php echo $value->getImage()?>" alt="">
+                <hr>
+                <p><?php echo $value->getDescription();?></p>
+                <a class="btn btn-primary" href="index.php?page=article&id=<?php echo $value->getId();?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+
+
+
+<?php endforeach;?>
+</div>
+<?php include "globals/slidebar.phtml";
+?>
+</div>
+</div>
+<?php include "globals/footer.phtml";?>

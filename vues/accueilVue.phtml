@@ -1,0 +1,63 @@
+<?php include "globals/header.phtml"; 
+?>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <h1 class="page-header">
+                    Page Heading
+                    <small>Secondary Text</small>
+
+                
+
+                </h1>
+
+              
+             
+                <!-- First Blog Post -->
+                <?php foreach ($resultatBlog as $key => $value):?>
+
+                <h2>
+                    <a href="#"><?php echo $value->getTitre();?></a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?php echo $value->getDatearticle();?></p>
+                <hr>
+                <img class="img-responsive" src="vues/img/<?php echo $value->getImage()?>" alt="">
+                <hr>
+                <p><?php echo $value->getDescription();?></p>
+                <a class="btn btn-primary" href="index.php?page=article&id=<?php echo $value->getId();?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+
+            <?php endforeach ;?>
+
+        
+              
+
+                <hr>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+
+<?php 
+include "globals/slidebar.phtml";
+
+include "globals/footer.phtml";
+?>
+
